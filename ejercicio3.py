@@ -18,7 +18,14 @@ plt.scatter(t,v)
 plt.scatter(t,u)
 plt.savefig('serie.png')
 
-#Covarianza
+#inicializa matriz de covarianza 
+cov = np.array([0,0] [0,0])
 
-for i in range()
+u_prom = np.sum(u)/ len(u)
+v_prom = np.sum(v) / len(v)
+
+#Covarianza
+for i in range(len(u)):
+    for j in range(len(u)):
+        cov[i,j] = ((u[i]- u_prom)*(v[i]- v_prom))/ (len(u)-1)
 

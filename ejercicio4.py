@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from scipy.fftpack import fft, fftfreq
 
 n = 512 # number of point in the whole interval
 f = 200.0 #  frequency in Hz
@@ -26,6 +27,18 @@ plt.title('y vs t')
 plt.savefig('senal.png')
 
 #b)
+trans = np.fft.fft(y)
+freq = np.fft.fftfreq(n, d= dt)
+
+#c)
+plt.figure()
+plt.plot(t,trans)
+plt.title('trans vs t')
+plt.savefig('fourier.png')
+
+
+
+
 
 
 
